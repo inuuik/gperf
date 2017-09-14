@@ -49,6 +49,7 @@ docdir = $(datadir)\doc\gperf
 
 CC = cl
 CXX = cl -TP
+RC = rc
 
 # Set to -W3 if you want to see maximum amount of warnings, including stupid
 # ones. Set to -W1 to avoid warnings about signed/unsigned combinations.
@@ -101,6 +102,9 @@ lib\getline.obj : lib\getline.cc
 
 lib\hash.obj : lib\hash.cc
 	$(CXX) $(INCLUDES) $(CXXFLAGS) -c lib\hash.cc -Folib\hash.obj
+
+res\gperf.res : res\gperf.rc
+	$(RC) res\gperf.rc
 
 # Dependencies.
 CONFIG_H = src\config.h
